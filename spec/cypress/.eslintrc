@@ -14,8 +14,7 @@
     "airbnb",
     "airbnb/hooks",
     "plugin:cypress/recommended",
-    "prettier",
-    "prettier/react"
+    "prettier"
   ],
   "rules": {
     "react/jsx-filename-extension": [
@@ -81,9 +80,7 @@
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:cypress/recommended",
-        "prettier",
-        "prettier/react",
-        "prettier/@typescript-eslint"
+        "prettier"
       ],
       "rules": {
         "import/extensions": [

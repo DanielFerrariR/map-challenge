@@ -55,20 +55,18 @@ const render = (ui: React.ReactElement, options?: Options): RenderResult => {
 
   const generateClassName: GenerateId = (rule, styleSheet) =>
     `${styleSheet?.options.classNamePrefix}-${rule.key}`
-  const Wrapper: React.FC = ({ children }) => {
-    return (
-      <Provider store={store}>
-        <Router history={history}>
-          <StylesProvider generateClassName={generateClassName}>
-            <MuiThemeProvider theme={theme}>
-              <CssBaseline />
-              {children}
-            </MuiThemeProvider>
-          </StylesProvider>
-        </Router>
-      </Provider>
-    )
-  }
+  const Wrapper: React.FC = ({ children }) => (
+    <Provider store={store}>
+      <Router history={history}>
+        <StylesProvider generateClassName={generateClassName}>
+          <MuiThemeProvider theme={theme}>
+            <CssBaseline />
+            {children}
+          </MuiThemeProvider>
+        </StylesProvider>
+      </Router>
+    </Provider>
+  )
 
   return rtlRender(ui, { wrapper: Wrapper, ...rest })
 }

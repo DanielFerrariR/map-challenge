@@ -43,11 +43,9 @@ const removePlace = (places: PlacesState, id: string): RemovePlaceAction => {
   }
 }
 
-const removeAllPlaces = (): RemoveAllPlacesAction => {
-  return {
-    type: REMOVE_ALL_PLACES,
-    payload: []
-  }
-}
+const removeAllPlaces = (): RemoveAllPlacesAction => ({
+  type: REMOVE_ALL_PLACES,
+  payload: []
+})
 
 export { addPlace, removePlace, removeAllPlaces }

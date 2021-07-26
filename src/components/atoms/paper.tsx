@@ -61,13 +61,11 @@ const StyledPaper = styled(({ newRef, newComponent, ...props }) => (
 )
 
 const Paper: React.FC<PaperProps> = React.forwardRef(
-  ({ children, component, ...props }, ref) => {
-    return (
-      <StyledPaper newRef={ref} newComponent={component} {...props}>
-        {children}
-      </StyledPaper>
-    )
-  }
+  ({ children, component, ...props }, ref) => (
+    <StyledPaper newRef={ref} newComponent={component} {...props}>
+      {children}
+    </StyledPaper>
+  )
 )
 
 StyledPaper.propTypes = {}

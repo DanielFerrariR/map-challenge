@@ -195,4 +195,4 @@ RewriteRule . /index.html [L]
 ## Links
 
 [Codcov](https://codecov.io/gh/DanielFerrariR/map-challange/branch/master)
-[Website](https://5f8f07a72abdb00008ed1822--angry-meitner-775e94.netlify.app)
+[Website](https://blissful-ardinghelli-eaa719.netlify.app)

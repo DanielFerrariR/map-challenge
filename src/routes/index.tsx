@@ -5,15 +5,13 @@ import { MuiThemeProvider, CssBaseline } from '@material-ui/core'
 import { theme } from 'src/styles'
 import { Home } from 'src/components/pages'
 
-const Routes: React.FC = () => {
-  return (
-    <MuiThemeProvider theme={theme}>
-      <CssBaseline />
-      <Switch>
-        <Route path="/" component={Home} />
-      </Switch>
-    </MuiThemeProvider>
-  )
-}
+const Routes: React.FC = () => (
+  <MuiThemeProvider theme={theme}>
+    <CssBaseline />
+    <Switch>
+      <Route path="/" component={Home} />
+    </Switch>
+  </MuiThemeProvider>
+)
 
 export default hot(Routes)

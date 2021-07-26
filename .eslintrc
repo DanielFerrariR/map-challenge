@@ -10,13 +10,7 @@
     "browser": true,
     "jest": true
   },
-  "extends": [
-    "airbnb",
-    "airbnb/hooks",
-    "plugin:jest/recommended",
-    "prettier",
-    "prettier/react"
-  ],
+  "extends": ["airbnb", "airbnb/hooks", "plugin:jest/recommended", "prettier"],
   "rules": {
     "react/jsx-filename-extension": [
       1,
@@ -87,9 +81,7 @@
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:jest/recommended",
-        "prettier",
-        "prettier/react",
-        "prettier/@typescript-eslint"
+        "prettier"
       ],
       "rules": {
         "import/extensions": [

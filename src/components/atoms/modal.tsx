@@ -20,13 +20,11 @@ const StyledModal = styled(MuiModal)(compose(spacing, flexbox, display))
 
 const isTest = process.env.NODE_ENV === 'test'
 
-const Modal: React.FC<ModalProps> = ({ children, ...props }) => {
-  return (
-    <StyledModal disablePortal={isTest && true} {...props}>
-      {children}
-    </StyledModal>
-  )
-}
+const Modal: React.FC<ModalProps> = ({ children, ...props }) => (
+  <StyledModal disablePortal={isTest && true} {...props}>
+    {children}
+  </StyledModal>
+)
 
 StyledModal.propTypes = {}
 

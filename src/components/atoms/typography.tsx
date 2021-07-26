@@ -44,13 +44,11 @@ const Typography: React.FC<TypographyProps> = ({
   component,
   css: newCss = {},
   ...props
-}) => {
-  return (
-    <StyledTypography newComponent={component} css={newCss} {...props}>
-      {children}
-    </StyledTypography>
-  )
-}
+}) => (
+  <StyledTypography newComponent={component} css={newCss} {...props}>
+    {children}
+  </StyledTypography>
+)
 
 StyledTypography.propTypes = {}
 

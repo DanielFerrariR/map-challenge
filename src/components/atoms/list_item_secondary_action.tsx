@@ -12,13 +12,11 @@ interface ExtraProps {
 const StyledListItemSecondaryAction = styled(MuiListItemSecondaryAction)({})
 
 const ListItemSecondaryAction: React.FC<ListItemSecondaryActionProps> &
-  ExtraProps = ({ children, ...props }) => {
-  return (
-    <StyledListItemSecondaryAction {...props}>
-      {children}
-    </StyledListItemSecondaryAction>
-  )
-}
+  ExtraProps = ({ children, ...props }) => (
+  <StyledListItemSecondaryAction {...props}>
+    {children}
+  </StyledListItemSecondaryAction>
+)
 
 ListItemSecondaryAction.muiName = 'ListItemSecondaryAction'
 StyledListItemSecondaryAction.propTypes = {}

@@ -26,9 +26,9 @@ const StyledCircularProgress = styled(MuiCircularProgress)(
   compose(spacing, positions, display, palette)
 )
 
-const CircularProgress: React.FC<CircularProgressProps> = (props) => {
-  return <StyledCircularProgress {...props} />
-}
+const CircularProgress: React.FC<CircularProgressProps> = (props) => (
+  <StyledCircularProgress {...props} />
+)
 
 StyledCircularProgress.propTypes = {}
 

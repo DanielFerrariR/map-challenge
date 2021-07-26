@@ -68,18 +68,16 @@ const StyledBox = styled(({ newRef, newComponent, ...props }) => (
 )
 
 const Box: React.FC<BoxProps> = React.forwardRef(
-  ({ children, component, css: newCss = {}, ...props }, ref) => {
-    return (
-      <StyledBox
-        newRef={ref}
-        newComponent={component}
-        css={newCss as any}
-        {...props}
-      >
-        {children}
-      </StyledBox>
-    )
-  }
+  ({ children, component, css: newCss = {}, ...props }, ref) => (
+    <StyledBox
+      newRef={ref}
+      newComponent={component}
+      css={newCss as any}
+      {...props}
+    >
+      {children}
+    </StyledBox>
+  )
 )
 
 StyledBox.propTypes = {}

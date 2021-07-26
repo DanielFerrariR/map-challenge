@@ -19,13 +19,11 @@ const Tooltip: React.FC<TooltipProps> = ({
   children,
   css: newCss = {},
   ...props
-}) => {
-  return (
-    <StyledTooltip css={newCss} {...props}>
-      {children}
-    </StyledTooltip>
-  )
-}
+}) => (
+  <StyledTooltip css={newCss} {...props}>
+    {children}
+  </StyledTooltip>
+)
 
 StyledTooltip.propTypes = {}
 

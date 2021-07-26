@@ -16,9 +16,9 @@ type ListItemTextProps = OldListItemTextProps & SpacingProps & PaletteProps
 
 const StyledListItemText = styled(MuiListItemText)(compose(spacing, palette))
 
-const ListItemText: React.FC<ListItemTextProps> = ({ children, ...props }) => {
-  return <StyledListItemText {...props}>{children}</StyledListItemText>
-}
+const ListItemText: React.FC<ListItemTextProps> = ({ children, ...props }) => (
+  <StyledListItemText {...props}>{children}</StyledListItemText>
+)
 
 StyledListItemText.propTypes = {}
 

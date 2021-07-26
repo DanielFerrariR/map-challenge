@@ -7,9 +7,9 @@ import {
 
 const StyledBackdrop = styled(MuiBackdrop)({})
 
-const Backdrop: React.FC<BackdropProps> = (props) => {
-  return <StyledBackdrop {...props} />
-}
+const Backdrop: React.FC<BackdropProps> = (props) => (
+  <StyledBackdrop {...props} />
+)
 
 StyledBackdrop.propTypes = {}
 

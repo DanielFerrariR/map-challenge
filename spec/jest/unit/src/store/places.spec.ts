@@ -11,11 +11,9 @@ import {
   PlacesState
 } from 'src/store/places'
 
-jest.mock('nanoid', () => {
-  return {
-    nanoid: jest.fn(() => '1')
-  }
-})
+jest.mock('nanoid', () => ({
+  nanoid: jest.fn(() => '1')
+}))
 
 type Actions = {
   type: string

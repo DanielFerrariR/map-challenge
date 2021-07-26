@@ -30,9 +30,7 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root">
-      <div id="container">
-        <%= htmlWebpackPlugin.options.loadingIcon %>
-      </div>
+      <div id="container"><%= htmlWebpackPlugin.options.loadingIcon %></div>
       <%= htmlWebpackPlugin.options.preload %>
     </div>
     <% for(var count = 0; count < htmlWebpackPlugin.files.js.length; count += 1)

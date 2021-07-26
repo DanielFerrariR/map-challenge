@@ -22,13 +22,11 @@ const ListItem: React.FC<ListItemProps> = ({
   component,
   button,
   ...props
-}) => {
-  return (
-    <StyledListItem newComponent={component} button={button as any} {...props}>
-      {children}
-    </StyledListItem>
-  )
-}
+}) => (
+  <StyledListItem newComponent={component} button={button as any} {...props}>
+    {children}
+  </StyledListItem>
+)
 
 StyledListItem.propTypes = {}
 

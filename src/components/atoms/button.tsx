@@ -27,18 +27,11 @@ const StyledButton = styled(({ newComponent, newRef, ...props }) => (
 ))(css(compose(spacing, sizing)))
 
 const Button: React.FC<ButtonProps> = React.forwardRef(
-  ({ children, component, css: newCss = {}, ...props }, ref) => {
-    return (
-      <StyledButton
-        newRef={ref}
-        newComponent={component}
-        css={newCss}
-        {...props}
-      >
-        {children}
-      </StyledButton>
-    )
-  }
+  ({ children, component, css: newCss = {}, ...props }, ref) => (
+    <StyledButton newRef={ref} newComponent={component} css={newCss} {...props}>
+      {children}
+    </StyledButton>
+  )
 )
 
 StyledButton.propTypes = {}

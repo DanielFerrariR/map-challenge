@@ -40,13 +40,11 @@ const List: React.FC<ListProps> = ({
   component,
   css: newCss = {},
   ...props
-}) => {
-  return (
-    <StyledList newComponent={component} css={newCss} {...props}>
-      {children}
-    </StyledList>
-  )
-}
+}) => (
+  <StyledList newComponent={component} css={newCss} {...props}>
+    {children}
+  </StyledList>
+)
 
 StyledList.propTypes = {}
 
