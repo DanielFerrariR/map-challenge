@@ -6,11 +6,11 @@
   <img src="https://img.shields.io/badge/version-1.0.0-blue" />
 </a>
 
-<a align="center" href="https://travis-ci.com/github/DanielFerrariR/map-challange">
-  <img src="https://travis-ci.com/DanielFerrariR/map-challange.svg?branch=master" />
+<a align="center" href="https://travis-ci.com/github/DanielFerrariR/map-challenge">
+  <img src="https://api.travis-ci.com/DanielFerrariR/map-challenge.svg?branch=master" />
 </a>
 
-[![codecov](https://codecov.io/gh/DanielFerrariR/map-challange/branch/master/graph/badge.svg?token=4VW1RJZ44J)](https://codecov.io/gh/DanielFerrariR/map-challange/branch/master)
+[![codecov](https://codecov.io/gh/DanielFerrariR/map-challenge/branch/master/graph/badge.svg?token=xqzOMvxham)](https://codecov.io/gh/DanielFerrariR/map-challenge)
 
 ## TOC
 
@@ -194,5 +194,5 @@ RewriteRule . /index.html [L]
 
 ## Links
 
-[Codcov](https://codecov.io/gh/DanielFerrariR/map-challange/branch/master)
+[Codcov](https://app.codecov.io/gh/DanielFerrariR/map-challenge)
 [Website](https://blissful-ardinghelli-eaa719.netlify.app)
