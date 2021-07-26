@@ -3,7 +3,7 @@ import { useSelector } from 'src/store'
 import ApexCharts from 'apexcharts'
 import { Box } from 'src/components/atoms'
 
-const TreeMapChart = () => {
+const TreeMapChart: React.FC = () => {
   const [onlyOnce] = React.useState(false)
   const places = useSelector((state) => state.places)
   const data = places.map((place) => ({
@@ -43,4 +43,4 @@ const TreeMapChart = () => {
   return places.some((e) => e) ? <Box id="chart" /> : null
 }
 
-export default React.memo(TreeMapChart)
+export default TreeMapChart
