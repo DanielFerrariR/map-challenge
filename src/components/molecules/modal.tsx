@@ -1,12 +1,19 @@
 import React from 'react'
-import { Fade, Modal as MuiModal, Paper, Backdrop } from 'src/components/atoms'
+import {
+  Fade,
+  Modal as MuiModal,
+  Paper,
+  Backdrop,
+  PaperProps
+} from 'src/components/atoms'
 
 interface Props {
   open: boolean
   setOpen: React.Dispatch<React.SetStateAction<any>>
+  paperProps?: PaperProps
 }
 
-const Modal: React.FC<Props> = ({ children, open, setOpen }) => {
+const Modal: React.FC<Props> = ({ children, open, setOpen, paperProps }) => {
   const handleClose = () => {
     setOpen(false)
   }
@@ -30,11 +37,11 @@ const Modal: React.FC<Props> = ({ children, open, setOpen }) => {
       <Fade in={open}>
         <Paper
           elevation={5}
-          width={1}
+          width="calc(100% - 16px)"
           maxWidth={800}
-          height="calc(100% - 16px)"
           p={2}
           mx={2}
+          {...(paperProps ?? {})}
         >
           {children}
         </Paper>

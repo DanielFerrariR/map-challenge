@@ -1,5 +1,6 @@
 export { default as Box } from './box'
 export { default as Paper } from './paper'
+export * from './paper'
 export { default as Typography } from './typography'
 export { default as IconButton } from './icon_button'
 export { default as Tooltip } from './tooltip'

@@ -109,11 +109,11 @@ const MapSearchInput: React.FC = () => {
         >
           <Badge
             badgeContent={
-              places.length && (
+              places.some((e) => e) ? (
                 <span data-testid="map-search-input-menu-badge">
                   {places.length > MAX_BADGE_NUMBER ? 99 : places.length}
                 </span>
-              )
+              ) : undefined
             }
             color="primary"
           >
@@ -138,7 +138,7 @@ const MapSearchInput: React.FC = () => {
           {loading ? <CircularProgress size={24} /> : <SearchIcon />}
         </Box>
       </Paper>
-      {open && searchText.length > 0 && options.length > 0 && (
+      {open && searchText && options.some((e) => e) && (
         <Paper>
           <List mt={1} maxHeight={256} css={{ overflow: 'auto' }}>
             {options.map((option, index) => (
@@ -154,7 +154,13 @@ const MapSearchInput: React.FC = () => {
           </List>
         </Paper>
       )}
-      <PlacesModal open={openModal} setOpen={setOpenModal} />
+      <PlacesModal
+        open={openModal}
+        setOpen={setOpenModal}
+        paperProps={{
+          height: places.some((e) => e) ? 'calc(100% - 16px)' : '400px'
+        }}
+      />
     </>
   )
 }

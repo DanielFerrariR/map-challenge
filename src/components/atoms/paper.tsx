@@ -27,7 +27,7 @@ import {
 } from '@material-ui/system'
 import { Link } from 'react-router-dom'
 
-type PaperProps = Omit<OldPaperProps, 'component'> &
+export type PaperProps = Omit<OldPaperProps, 'component'> &
   BordersProps &
   DisplayProps &
   FlexboxProps &
