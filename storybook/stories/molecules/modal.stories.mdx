@@ -1,0 +1,55 @@
+import { useState } from 'react'
+import { Modal } from 'src/components/molecules'
+import { Button, Typography } from 'src/components/atoms'
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+
+<Meta title="Components/Molecules/Modal" component={Modal} />
+
+# Modal
+
+This component was created from modal of [@material-ui](https://material-ui.com).
+
+[Modal API](https://material-ui.com/api/modal)
+
+We also use the following additional props from [@material-ui/system/basics](https://material-ui.com/system/basics):
+
+[Flexbox API](https://material-ui.com/system/flexbox)
+
+[Display API](https://material-ui.com/system/display)
+
+[Spacing API](https://material-ui.com/system/spacing)
+
+<Preview>
+  <Story name="simple modal">
+    {() => {
+      const [open, setOpen] = useState(false)
+      return (
+        <>
+          <Button onClick={() => setOpen(true)} color="secondary">
+            Open modal
+          </Button>
+          <Modal open={open} setOpen={setOpen}>
+            <Typography mb={3} align="center">
+              Modal Name
+            </Typography>
+            <Button
+              color="secondary"
+              size="large"
+              width={0.5}
+              onClick={() => setOpen(false)}
+            >
+              Ok
+            </Button>
+          </Modal>
+        </>
+      )
+    }}
+  </Story>
+</Preview>
+
+## Extra Props
+
+| Name    | Description                               | Default   |
+| ------- | ----------------------------------------- | --------- |
+| open    | The state to open the modal.              | undefined |
+| setOpen | The setState function to close the modal. | undefined |

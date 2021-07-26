@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing Home component should snapshot works 1`] = `
+<div>
+  <div
+    class="MuiBox-root MuiBox-root Component-root Component-root"
+  />
+</div>
+`;
