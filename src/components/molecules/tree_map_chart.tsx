@@ -4,7 +4,7 @@ import ApexCharts from 'apexcharts'
 import { Box } from 'src/components/atoms'
 
 const TreeMapChart = () => {
-  const [onlyOnce, setOnlyOnce] = React.useState(false)
+  const [onlyOnce] = React.useState(false)
   const places = useSelector((state) => state.places)
   const data = places.map((place) => ({
     x: place.name,
@@ -32,11 +32,12 @@ const TreeMapChart = () => {
   )
 
   React.useEffect(() => {
-    if (onlyOnce) return
     if (!places.some((e) => e)) return
-    const chart = new ApexCharts(document.querySelector('#chart'), options)
+    const element = document.querySelector('#chart')
+    if (!element) return
+    element.innerHTML = ''
+    const chart = new ApexCharts(element, options)
     chart.render()
-    setOnlyOnce(true)
   }, [onlyOnce, options, places])
 
   return places.some((e) => e) ? <Box id="chart" /> : null
