@@ -18,6 +18,8 @@ import PlacesModal from './places_modal'
 
 const MAX_BADGE_NUMBER = 99
 const REGIONS = ['africa', 'americas', 'asia', 'europe', 'oceania']
+const TYPING_DELAY = 1000
+const ANIMATION_DELAY = 500
 
 const MapSearchInput: React.FC = () => {
   const [loading, setLoading] = React.useState(false)
@@ -30,11 +32,17 @@ const MapSearchInput: React.FC = () => {
   const dispatch = useDispatch()
 
   React.useEffect(() => {
+    if (searchTimeout.current) {
+      clearTimeout(searchTimeout.current)
+    }
+
     if (!searchText) return
 
     const asyncEffect = async () => {
       try {
         setLoading(true)
+
+        await new Promise((resolve) => setTimeout(resolve, ANIMATION_DELAY))
 
         let response
 
@@ -56,12 +64,15 @@ const MapSearchInput: React.FC = () => {
       }
     }
 
-    if (searchTimeout.current) {
-      clearTimeout(searchTimeout.current)
-    }
-    searchTimeout.current = setTimeout(() => {
+    searchTimeout.current = setTimeout(async () => {
       asyncEffect()
-    }, 500)
+    }, TYPING_DELAY)
+
+    return () => {
+      if (searchTimeout.current) {
+        clearTimeout(searchTimeout.current)
+      }
+    }
   }, [searchText])
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -81,10 +92,6 @@ const MapSearchInput: React.FC = () => {
     setSearchText('')
   }
 
-  const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault()
-  }
-
   return (
     <>
       <Paper
@@ -94,8 +101,6 @@ const MapSearchInput: React.FC = () => {
         alignItems="center"
         width={1}
         maxWidth="400px"
-        component="form"
-        onSubmit={handleSubmit}
       >
         <IconButton
           data-testid="map-search-input-menu-button"
