@@ -38,7 +38,7 @@ const Modal: React.FC<Props> = ({ children, open, setOpen, paperProps }) => {
         <Paper
           elevation={5}
           width="calc(100% - 16px)"
-          maxWidth={800}
+          maxWidth={400}
           p={2}
           mx={2}
           {...(paperProps ?? {})}

@@ -154,13 +154,7 @@ const MapSearchInput: React.FC = () => {
           </List>
         </Paper>
       )}
-      <PlacesModal
-        open={openModal}
-        setOpen={setOpenModal}
-        paperProps={{
-          height: places.some((e) => e) ? 'calc(100% - 16px)' : '400px'
-        }}
-      />
+      <PlacesModal open={openModal} setOpen={setOpenModal} />
     </>
   )
 }

@@ -1,6 +1,8 @@
 const plugins = [
   'react-hot-loader/babel',
-  '@babel/plugin-proposal-class-properties'
+  '@babel/plugin-proposal-class-properties',
+  '@babel/plugin-proposal-private-methods',
+  '@babel/plugin-proposal-private-property-in-object'
 ]
 
 if (process.env.IS_CYPRESS) {

@@ -7,8 +7,7 @@ import {
   Box,
   Typography,
   Tooltip,
-  ListItemSecondaryAction,
-  PaperProps
+  ListItemSecondaryAction
 } from 'src/components/atoms'
 import { Delete as DeleteIcon, Close as CloseIcon } from '@material-ui/icons'
 import { useSelector, useDispatch } from 'src/store'
@@ -20,16 +19,22 @@ import TreeMapChart from './tree_map_chart'
 interface Props {
   open: boolean
   setOpen: React.Dispatch<React.SetStateAction<any>>
-  paperProps?: PaperProps
 }
 
-const PlacesModal: React.FC<Props> = ({ open, setOpen, paperProps }) => {
+const PlacesModal: React.FC<Props> = ({ open, setOpen }) => {
   const places = useSelector((state) => state.places)
   const dispatch = useDispatch()
   const theme = useTheme()
 
   return (
-    <Modal open={open} setOpen={setOpen} paperProps={paperProps}>
+    <Modal
+      open={open}
+      setOpen={setOpen}
+      paperProps={{
+        height: places.some((e) => e) ? 'calc(100% - 16px)' : '400px',
+        maxWidth: 800
+      }}
+    >
       <Box height="100%">
         <Box
           height={places.some((e) => e) ? 0.5 : 1}

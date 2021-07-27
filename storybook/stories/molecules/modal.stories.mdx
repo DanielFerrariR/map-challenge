@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Modal } from 'src/components/molecules'
 import { Button, Typography } from 'src/components/atoms'
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { Meta, Story, Preview } from '@storybook/addon-docs'
 
 <Meta title="Components/Molecules/Modal" component={Modal} />
 
@@ -28,7 +28,15 @@ We also use the following additional props from [@material-ui/system/basics](htt
           <Button onClick={() => setOpen(true)} color="secondary">
             Open modal
           </Button>
-          <Modal open={open} setOpen={setOpen}>
+          <Modal
+            open={open}
+            setOpen={setOpen}
+            paperProps={{
+              display: 'flex',
+              alignItems: 'center',
+              flexDirection: 'column'
+            }}
+          >
             <Typography mb={3} align="center">
               Modal Name
             </Typography>
